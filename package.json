@@ -1,0 +1,22 @@
+{
+  "type": "module",
+  "dependencies": {
+    "@langchain/core": "^0.3.18",
+    "@langchain/ollama": "^0.1.2",
+    "langchain": "^0.3.6",
+    "ollama": "^0.5.10",
+    "typescript": "^5.5.3",
+    "typescript-eslint": "^8.0.1"
+  },
+  "scripts": {
+    "start": "node dist/index.js",
+    "clean": "rimraf dist/",
+    "copy-files": "copyfiles -u 1 src/prompts/*.txt src/data/*.jsonl dist/",
+    "build": "yarn clean && tsc && yarn copy-files"
+  },
+  "devDependencies": {
+    "@tsconfig/recommended": "^1.0.2",
+    "copyfiles": "^2.4.1",
+    "rimraf": "^6.0.1"
+  }
+}
